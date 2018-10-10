@@ -1,6 +1,8 @@
 # AOS - Arduboy Operating System
 Welcome to AOS (Arduboy Operating System)
+
 Version 1.0 ... (c) 2018 by deetee/zooxo
+
 This software is covered by the 3-clause BSD license.
 
 ## PREAMBLE
@@ -35,10 +37,7 @@ To save the floatstack permanently to the EEPROM use [Fsave].
 Two stacks of 256 bytes (0...255) can hold programs (like shell scripts) or ascii characters (text). Programs can be executed with [Prun] and edited with [Pedit] respectively text files can be edited with [TXT]. To switch between active program and inactive twin use [Pswap]. Even a simple subprogram feature is possible (see [Psub]).
 Note that there are some commands that are only useful in executable programs (like [PpB], [Pgoto] or [Psub]).
 
-  ____________________
-
-  ## COMMANDS
-  ____________________
+## COMMANDS
 
   COMMANDS - Sections (capital letters in commands):
     B     bytestack operations
@@ -57,6 +56,7 @@ Note that there are some commands that are only useful in executable programs (l
     WATCH simple digital clock
 
   COMMANDS - Overview (commands and corresponding ascii characters):
+  ```
       DEC  |  0       1       2       3       4       5       6       7
       -----|--+-------+-------+-------+-------+-------+-------+-------+------
       032  |    about ! B2F   " B>>F  # Bclr  $ Bprnt % Bshow & CALC  ' Cload
@@ -70,7 +70,7 @@ Note that there are some commands that are only useful in executable programs (l
       096  |  ` Inum  a KBD   b OFF   c Pedit d Pexp  e Pgoto f Pimp  g Pname
       104  |  h Pnop  i PpB   j Ppse  k Prun  l Pstop m Psub  n Pswap o Py/n
       112  |  p Sfn   q Slit  r Sss   s TERM  t TORCH u TXT   v WATCH w Wset
-
+```
 
   COMMANDS - Detailed description:
     [about] Print about message
