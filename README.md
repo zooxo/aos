@@ -1,88 +1,43 @@
 # AOS - Arduboy Operating System
+Welcome to AOS (Arduboy Operating System)
 Version 1.0 ... (c) 2018 by deetee/zooxo
+This software is covered by the 3-clause BSD license.
 
 ## PREAMBLE
+It is a little bit overacting to name this software an OS - at least because of the missing multiuser and multitasking features. But in form of a command shell this software controls the hardware of the Arduboy, the memory and all in/outputs.
+
+As I like Linux and ancient HP-calculators I tried to combine both on a standardized Arduino hardware (Arduboy). AOS is based on a command shell with nearly 90 commands. So it is possible to generate and edit shell scripts (programs) to run a batch of commands automatically. With a simple disk operating system programs can be permanently saved to the EEPROM - and of course loaded from disk. It is even possible to export or import programs to or from a (Linux) PC.
+
+In addition to this basic OS functions AOS offers a lot of useful applications:
+* A simple text editor which enables the treatment of text files. Like programs text files can be stored to disk or exported to a PC.
+* A calculator interface to offer a scientific RPN calculator. There is even a SOLVE or an INTEGRATE function.
+* A keyboard emulator to simulate a (HID) keyboard via USB.
+* A terminal mode which allows to control AOS from a PC keyboard.
+* A clock (WATCH command).
+* A torch (toggle white Arduboy LED).
+
+Enjoy!
+deetee
 
 ## OVERVIEW
 
 ![all](https://user-images.githubusercontent.com/16148023/46715416-2edd9380-cc60-11e8-8aa4-b2d6a0e266b3.png)
 
-## COMMANDS
+Central part of AOS is the memory which consists of three different kinds of stacks:
+* Bytestack:
+This stack of 16 bytes is the central memory for inputs of whole numbers between 0 and 255 which can be interpreted as figure or ascii character. With [Ibyte], [Ichar] and [Inum] values can be entered respectively with [PpB] the value of the next program step will be interpreted as a number (and not as a command).
+Values of the bytestack can further be used as parameters for settings, as characters for printing messages, as bytes to send to interfaces or as ascii characters to create float numbers.
+* Floatstack:
+Similar to most RPN-calculators the floatstack consists of four registers (X, Y, Z and T) which are able to hold float numbers (-1E38 to 1E38) with a precision of mostly 7 significant digits.
+Once on the floatstack numbers can be processed (i.e. added), treated (i.e. mathematical function) or compared (conditions in programs).
+To save the floatstack permanently to the EEPROM use [Fsave].
+* Program:
+Two stacks of 256 bytes (0...255) can hold programs (like shell scripts) or ascii characters (text). Programs can be executed with [Prun] and edited with [Pedit] respectively text files can be edited with [TXT]. To switch between active program and inactive twin use [Pswap]. Even a simple subprogram feature is possible (see [Psub]).
+Note that there are some commands that are only useful in executable programs (like [PpB], [Pgoto] or [Psub]).
 
   ____________________
 
-    Welcome to AOS (Arduboy Operating System)
-    Version 1.0 ... (c) 2018 by deetee/zooxo
-    This software is covered by the 3-clause BSD license.
-
-  ____________________
-
-    PREAMBLE
-  ____________________
-
-    It is a little bit overacting to name this software an OS - at least because
-    of the missing multiuser and multitasking features. But in form of a command
-    shell this software controls the hardware of the Arduboy, the memory and all
-    in/outputs.
-
-    As I like Linux and ancient HP-calculators I tried to combine both on a
-    standardized Arduino hardware (Arduboy).
-    AOS is based on a command shell with nearly 90 commands. So it is possible
-    to generate and edit shell scripts (programs) to run a batch of commands
-    automatically. With a simple disk operating system programs can be
-    permanently saved to the EEPROM - and of course loaded from disk. It is even
-    possible to export or import programs to or from a (Linux) PC.
-
-    In addition to this basic OS functions AOS offers a lot of useful
-    applications:
-      - A simple text editor which enables the treatment of text files. Like
-        programs text files can be stored to disk or exported to a PC.
-      - A calculator interface to offer a scientific RPN calculator. There is
-        even a SOLVE or an INTEGRATE function.
-      - A keyboard emulator to simulate a (HID) keyboard via USB.
-      - A terminal mode which allows to control AOS from a PC keyboard.
-      - A clock (WATCH command).
-      - A torch (toggle white Arduboy LED).
-
-    Enjoy!
-    deetee
-
-  ____________________
-
-    OVERVIEW
-  ____________________
-
-    Central part of AOS is the memory which consists of three different kinds
-    of stacks:
-      - Bytestack:
-        This stack of 16 bytes is the central memory for inputs of whole
-        numbers between 0 and 255 which can be interpreted as figure or ascii
-        character. With [Ibyte], [Ichar] and [Inum] values can be entered
-        respectively with [PpB] the value of the next program step will be
-        interpreted as a number (and not as a command).
-        Values of the bytestack can further be used as parameters for settings,
-        as characters for printing messages, as bytes to send to interfaces
-        or as ascii characters to create float numbers.
-      - Floatstack:
-        Similar to most RPN-calculators the floatstack consists of four
-        registers (X, Y, Z and T) which are able to hold float numbers
-        (-1E38 to 1E38) with a precision of mostly 7 significant digits.
-        Once on the floatstack numbers can be processed (i.e. added), treated
-        (i.e. mathematical function) or compared (conditions in programs).
-        To save the floatstack permanently to the EEPROM use [Fsave].
-      - Program:
-        Two stacks of 256 bytes (0...255) can hold programs (like shell
-        scripts) or ascii characters (text). Programs can be executed with
-        [Prun] and edited with [Pedit] respectively text files can be
-        edited with [TXT]. To switch between active program and inactive
-        twin use [Pswap]. Even a simple subprogram feature is possible (see
-        [Psub]).
-        Note that there are some commands that are only useful in executable
-        programs (like [PpB], [Pgoto] or [Psub]).
-
-  ____________________
-
-    COMMANDS
+  ## COMMANDS
   ____________________
 
   COMMANDS - Sections (capital letters in commands):
