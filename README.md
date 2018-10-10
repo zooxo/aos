@@ -3,6 +3,7 @@ Welcome to AOS (Arduboy Operating System)
 Version 1.0 ... (c) 2018 by deetee/zooxo  
 This software is covered by the 3-clause BSD license.  
 
+
 ## PREAMBLE
 It is a little bit overacting to name this software an OS - at least because of the missing multiuser and multitasking features. But in form of a command shell this software controls the hardware of the Arduboy, the memory and all in/outputs.
 
@@ -19,6 +20,7 @@ In addition to this basic OS functions AOS offers a lot of useful applications:
 Enjoy!
 deetee
 
+
 ## OVERVIEW
 
 ![all](https://user-images.githubusercontent.com/16148023/46715416-2edd9380-cc60-11e8-8aa4-b2d6a0e266b3.png)
@@ -34,6 +36,7 @@ To save the floatstack permanently to the EEPROM use [Fsave].
 * **Program**:
 Two stacks of 256 bytes (0...255) can hold programs (like shell scripts) or ascii characters (text). Programs can be executed with [Prun] and edited with [Pedit] respectively text files can be edited with [TXT]. To switch between active program and inactive twin use [Pswap]. Even a simple subprogram feature is possible (see [Psub]).
 Note that there are some commands that are only useful in executable programs (like [PpB], [Pgoto] or [Psub]).
+
 
 ## COMMANDS
 
