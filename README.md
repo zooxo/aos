@@ -74,16 +74,13 @@ Note that there are some commands that are only useful in executable programs (l
 ```
 
 ### **COMMANDS** - Detailed description:
-* **[about]** Print about message
-            Prints the name of this software, the version and the author.
-* **[B2F]**   Pull bytestack[0] and push/cast to floatstack[0]
-            Pulls first bytestack register and pushes it (with casting to double)
-            to the first floatstack register.
-    [B>>F]  Flush bytestack to calculator
-            Flushes the inverted bytestack (not equal NULL) to become interpreted
-            by the the calculator (ie digits, decimal point). Useful in programs
-            to enter float numbers to the floatstack.
-    [Bclr]  Clear bytestack
+* **[about]** Print about message  
+Prints the name of this software, the version and the author.
+* **[B2F]** Pull bytestack[0] and push/cast to floatstack[0]  
+Pulls first bytestack register and pushes it (with casting to double) to the first floatstack register.
+* **[B>>F]** Flush bytestack to calculator  
+Flushes the inverted bytestack (not equal NULL) to become interpreted by the the calculator (ie digits, decimal point). Useful in programs to enter float numbers to the floatstack.
+* **[Bclr]**  Clear bytestack
             Writes NULL values to the whole bytestack.
     [Bprnt] Print bytestack as string
             Flushes the inverted bytestack (not equal NULL) and print this
