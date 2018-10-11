@@ -286,7 +286,7 @@ Some variables are stored permanently to the EEPROM and will be loaded automatic
             screensaver is active.
 
 
-### YES/NO/ESC-decision (Py/n)
+### YES/NO/ESC-decision [Py/n]
        Py/n --->---+
        - <---ESC---+   ESC (any key except YES or NO) runs the next program step
        -           |
