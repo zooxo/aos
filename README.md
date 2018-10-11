@@ -10,8 +10,8 @@ It is a little bit overacting to name this software an OS - at least because of 
 As I like Linux and ancient HP-calculators I tried to combine both on a standardized Arduino hardware (Arduboy). AOS is based on a command shell with nearly 90 commands. So it is possible to generate and edit shell scripts (programs) to run a batch of commands automatically. With a simple disk operating system programs can be permanently saved to the EEPROM - and of course loaded from disk. It is even possible to export or import programs to or from a (Linux) PC.
 
 In addition to this basic OS functions AOS offers a lot of useful applications:
-* A simple text editor which enables the treatment of text files. Like programs text files can be stored to disk or exported to a PC.
 * A calculator interface to offer a scientific RPN calculator. There is even a SOLVE or an INTEGRATE function.
+* A simple text editor which enables the treatment of text files. Like programs text files can be stored to disk or exported to a PC.
 * A keyboard emulator to simulate a (HID) keyboard via USB.
 * A terminal mode which allows to control AOS from a PC keyboard.
 * A clock (WATCH command).
