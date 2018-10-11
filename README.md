@@ -98,7 +98,7 @@ User interface that allows to treat files (programs) saved to EEPROM. Browse the
 Format the disk (EEPROM) - this deletes all saved files!
 * **[F!]** Calculate GAMMA/factorial +)  
 This function calculates the gamma function due to Nemes.
-* **[F*]** Calculate Y\*X  
+* **[F\*]** Calculate Y\*X  
 This function pulls and multiplies the first two floatstack registers and pushes the result to the floatstack.
 * **[F+]** Calculate Y+X  
 This function pulls and adds the first two floatstack registers and pushes the result to the floatstack.
