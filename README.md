@@ -216,97 +216,58 @@ This user interface allows to send keyboard like commands to the USB interface. 
               215-RIGHT   216-LEFT    217-DOWN    218-UP
 ``````
 * **[OFF]** Power down till A is pressed (SLEEP_MODE_PWR_DOWN), shift+B 
-            Sends the device into a deep sleep mode till button A is
-            pressed. Note that neither a timer nor an interface is active.
+Sends the device into a deep sleep mode till button A is pressed. Note that neither a timer nor an interface is active.
 * **[Pedit]** Edit active program  
-            User interface to edit a program. Insert a step with shift+R,
-            delete a step with shift+L and edit a step with A.
+User interface to edit a program. Insert a step with shift+R, delete a step with shift+L and edit a step with A.
 * **[Pexp]** Export active program to Linux-PC  
-            Exports program to a Linux-PC with minicom installed. It opens
-            a shell, transfers steps (corresponding ascii characters) with
-            minicom to the home directory of the PC (file named prg.aos).
-            This file can be edited with any text editor and imported
-            with [Pimp].
+Exports program to a Linux-PC with minicom installed. It opens a shell, transfers steps (corresponding ascii characters) with minicom to the home directory of the PC (file named prg.aos). This file can be edited with any text editor and imported with [Pimp].
 * **[Pgoto]** Goto program step  
-            Reads the next program step and sets the program pointer to
-            this value.
+Reads the next program step and sets the program pointer to this value.
 * **[Pimp]** Import active program from Linux-PC  
-            Imports program from a Linux-PC. The file should be located
-            in the home directory and should be named prg.aos. To export
-            a program to a PC see [Pexp].
+Imports program from a Linux-PC. The file should be located in the home directory and should be named prg.aos. To export a program to a PC see [Pexp].
 * **[Pname]** Set program name (ZYX)  
-            Sets the name of the program (3 letters) due to the first three
-            bytestack registers (inverted order).
+Sets the name of the program (3 letters) due to the first three bytestack registers (inverted order).
 * **[Pnop]** No operation  
-            This command does nothing, but is useful for skipping commands
-            like [Py/n].
+This command does nothing, but is useful for skipping commands like [Py/n].
 * **[PpB]** Push value of next program step to bytestack  
-            This is the one and only command for a direct input of numbers
-            in a program. It pushes the byte value of the following program
-            step to the bytestack.
+This is the one and only command for a direct input of numbers in a program. It pushes the byte value of the following program step to the bytestack.
 * **[Ppse]** Pause for PAUSE milliseconds  
-            Pauses the execution of the program for 1 second. This is useful
-            to show messages or results while program execution.
+Pauses the execution of the program for 1 second. This is useful to show messages or results while program execution.
 * **[Prun]** Run active program  
-            This command starts the execution of the program.
+This command starts the execution of the program.
 * **[Pstop]** Stops program execution  
-            This command stops the execution of the program (note the
-            hotkey LEFT+B).
+This command stops the execution of the program (note the hotkey LEFT+B).
 * **[Psub]** Execute non-active program and return  
-            Switches to the non-active program, executes it and switches back
-            to the source program execution. This is a simple way to use
-            program codes as subprogram. To toggle between the active and
-            non-active program see also [Pswap].
+Switches to the non-active program, executes it and switches back to the source program execution. This is a simple way to use program codes as subprogram. To toggle between the active and non-active program see also [Pswap].
 * **[Pswap]** Toggle between active and non-active program  
-            Toggle between active program and non-active program. See also
-            [Psub].
+Toggle between active program and non-active program. See also [Psub].
 * **[Py/n]** Decision ESC (ptr+1), NO (ptr+3) or YES (ptr+5)  
-            This command offers the possibility to check for a decision
-            while program execution. While in line 1 of the display a text
-            could be displayed (command [Bprnt]) in line 2 a YES or NO
-            text will be shown. In case of a NO decision (LEFT key) the
-            program pointer will be incremented by 3 and in case of a YES
-            decision (RIGHT key) the program pointer will be incremented
-            by 5. Any other key will execute the next program step.
+This command offers the possibility to check for a decision while program execution. While in line 1 of the display a text could be displayed (command [Bprnt]) in line 2 a YES or NO text will be shown. In case of a NO decision (LEFT key) the program pointer will be incremented by 3 and in case of a YES decision (RIGHT key) the program pointer will be incremented by 5. Any other key will execute the next program step.
 * **[Sfn]** Set function keys and save to EEPROM (rdlu=TZYX)  
-            While in command mode 4 function keys can be defined by the
-            user. This command pulls 4 bytes (commands) from the bytestack
-            and assigns them to the 4 function keys (RIGHT, DOWN, LEFT, UP).
-            Additionally these assignments are saved permanantly to the
-            EEPROM. To recall these commands press in command mode shift and
-            the corrsponding cursor key.
+While in command mode 4 function keys can be defined by the user. This command pulls 4 bytes (commands) from the bytestack and assigns them to the 4 function keys (RIGHT, DOWN, LEFT, UP). Additionally these assignments are saved permanantly to the EEPROM. To recall these commands press in command mode shift and the corrsponding cursor key.
 * **[Slit]** Set contrast  
-            Sets the contrast of the display due to the first bytestack
-            register and saves it permanently to the EEPROM.
+Sets the contrast of the display due to the first bytestack register and saves it permanently to the EEPROM.
 * **[Sss]** Set screensaver time  
-            Sets the screensaver time due to the first bytestack register
-            (in seconds) and saves it permanently to the EEPROM.
+Sets the screensaver time due to the first bytestack register (in seconds) and saves it permanently to the EEPROM.
 * **[TERM]** Toggle terminal control  
-            Enables to control AOS via USB from a PC running a terminal
-            program (ie minicom). So the keys Q/W/E/A/S/D are corresponding
-            to the buttons A/UP/B/LEFT/DOWN/RIGHT.
+Enables to control AOS via USB from a PC running a terminal program (ie minicom). So the keys Q/W/E/A/S/D are corresponding to the buttons A/UP/B/LEFT/DOWN/RIGHT.
 * **[TORCH]** Toggle torch  
-            This command toggles the white LED light of the Arduboy.
+This command toggles the white LED light of the Arduboy.
 * **[TXT]** Text editor (treat prg[] as text file)  
-            User interface to edit a program a text file. To insert a
-            character press shift+RIGHT or B. To delete a character
-            (backspace) press shift+LEFT. Note that a text file can be moved
-            (load, save, import, export) like a program.
+User interface to edit a program a text file. To insert a character press shift+RIGHT or B. To delete a character (backspace) press shift+LEFT. Note that a text file can be moved (load, save, import, export) like a program.
 * **[WATCH]** Show watch (set with cursor keys, reset minute with B)  
-            Note that screensaver and auto poweroff will be deactivated.
+Note that screensaver and auto poweroff will be deactivated.
 * **[Wset]** Set watch from bytestack (YY:XX)  
-            Activates and sets the watch due to the first two bytestack
-            registers (minutes and hours).
+Activates and sets the watch due to the first two bytestack registers (minutes and hours).
 
-    +) ...  Some functions affect the whole floatstack as they are
-            calculated with basic operations.
++) ...  Some functions affect the whole floatstack as they are calculated with basic operations.
 
 
-
+## **BATTERY**
   Battery level: PLUGGED/FULL 4.33 V, UNPLUGGED/MAX 4.22 V, MIN 3.11 V
      discharge: (0h|4.15V) (22h|3.6V)
 
-  Variables, Memory:
+ ## Variables, Memory:
           :         T
       2   Z         Z                   P1 = 0, 1, 2, ... 255  <----/  Swap
       1   Y         Y                                              /   with
