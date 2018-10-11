@@ -108,156 +108,156 @@ This function pulls and substracts the first two floatstack registers and pushes
 This function pulls and divides the first two floatstack registers and pushes the result to the floatstack.
 * **[F2h]** Convert H.MS to H  
 Converts time or angle data given in h.mmss format to h.hh format.
-* **[F2hms]** Convert H to H.MS
-            Converts time or angle data given in h.hh format to h.mmss format.
-    [F2p]   Convert rectangular to polar coordinates +)
+* **[F2hms]** Convert H to H.MS  
+Converts time or angle data given in h.hh format to h.mmss format.
+* **[F2p]** Convert rectangular to polar coordinates +)  
             Converts rectangular coordinates (x|y) represented in the first
             two registers of the floatstack (X|Y) to polar coordinates (r|<)
             represented in the first two registers of the floatstack (X|Y).
-    [F2r]   Convert polar to rectangular coordinates +)
+* **[F2r]** Convert polar to rectangular coordinates +)  
             Converts polar coordinates (r|<) represented in the first two
             registers of the floatstack (X|Y) to rectangular coordinates (x|y)
             represented in the first two registers of the floatstack (X|Y).
-    [F<]    True (ptr+2) if X < Y on floatstack
+* **[F<]** True (ptr+2) if X < Y on floatstack  
             Increments the program pointer with 2 if the first floatstack
             register is less than the second.
-    [F<=]   True (ptr+2) if X <= Y on floatstack
+* **[F<=]** True (ptr+2) if X <= Y on floatstack  
             Increments the program pointer with 2 if the first floatstack
             register is less or equal than the second.
-    [F<>]   True (ptr+2) if X <> Y on floatstack
+* **[F<>]** True (ptr+2) if X <> Y on floatstack  
             Increments the program pointer with 2 if the first floatstack
             register is not equal than the second.
-    [F=]    True (ptr+2) if X = Y on floatstack
+* **[F=]** True (ptr+2) if X = Y on floatstack  
             Increments the program pointer with 2 if the first floatstack
             register is equal to the second.
-    [F>]    True (ptr+2) if X > Y on floatstack
+* **[F>]** True (ptr+2) if X > Y on floatstack  
             Increments the program pointer with 2 if the first floatstack
             register is greater than the second.
-    [F>=]   True (ptr+2) if X >= Y on floatstack
+* **[F>=]** True (ptr+2) if X >= Y on floatstack  
             Increments the program pointer with 2 if the first floatstack
             register is greater or equal than the second.
-    [Facos] Calculate ACOS(X) +)
+* **[Facos]** Calculate ACOS(X) +)  
             This function calculates the inverse cosine function of the
             first floatstack register.
-    [Facsh] Calculate ACOSH(X) +)
+* **[Facsh]** Calculate ACOSH(X) +)  
             This function calculates the inverse hyperbolic cosine function
             of the first floatstack register.
-    [Fannu] Calculate annuity/preset value (Y: rate, X:years) +)
+* **[Fannu]** Calculate annuity/preset value (Y: rate, X:years) +)  
             Calculates the annuity respective preset value of a given interest
             rate (second floatstack register) and duration (first floatstack
             register).
-    [Fasin] Calculate ASIN(X)
+* **[Fasin]** Calculate ASIN(X)  
             This function calculates the inverse sine function of the first
             floatstack register.
-    [Fasnh] Calculate ASINH(X) +)
+* **[Fasnh]** Calculate ASINH(X) +)  
             This function calculates the inverse hyperbolic sine function
             of the first floatstack register.
-    [Fatan] Calculate ATAN(X)
+* **[Fatan]** Calculate ATAN(X)  
             This function calculates the inverse tangent function of the first
             floatstack register.
-    [Fatnh] Calculate ATANH(X) +)
+* **[Fatnh]** Calculate ATANH(X) +)  
             This function calculates the inverse hyperbolic tangent function
             of the first floatstack register.
-    [Fbatt] Push the value of battery voltage to floatstack
+* **[Fbatt]** Push the value of battery voltage to floatstack  
             Measures the supply voltage and pushes the value to the floatstack.
             Values between 2.4V (0%) and 4.3V (100%) correspond to the
             battery level.
-    [Fce]   Clear last entry
+* **[Fce]** Clear last entry  
             Deletes last entry or keypress of entered float number.
-    [Fchs]  Change sign of X
+* **[Fchs]** Change sign of X  
             Changes the sign of the first floatstack register.
-    [Fclx]  Clear X
+* **[Fclx]** Clear X  
             Clears the first floatstack register (assign 0.0).
-    [Fcos]  Calculate COS(X) +)
+* **[Fcos]** Calculate COS(X) +)  
             This function calculates the cosine function of the first
             floatstack register.
-    [Fcosh] Calculate COSH(X) +)
+* **[Fcosh]** Calculate COSH(X) +)  
             This function calculates the hyperbolic cosine function of the
             first floatstack register.
-    [FEE]   Calculate EE (Y*10^X) on floatstack
+* **[FEE]** Calculate EE (Y\*10^X) on floatstack  
             This function pulls the first two floatstack registers and
             multiplies the second with 10  raised to the power of the first.
             Use this function to enter exponents with base 10.
-    [Fexp]  Calculate EXP(X)
+* **[Fexp]** Calculate EXP(X)  
             This function calculates the exponential function of the first
             floatstack register.
-    [Fgaus] Calculate CDF/PDF (standardized gaussian distribution function) +)
+* **[Fgaus]** Calculate CDF/PDF (standardized gaussian distribution function) +)  
             This function calculates the  CDF (Cumulative Distribution Function)
             and PDF (Probability Density Function) of the first floatstack
             register and pushes the results to the floatstack.
-    [Fint]  INTegrate function represented in prg[] between Y and X
+* **[Fint]** INTegrate function represented in prg[] between Y and X  
             Calculates the integral of the function represented in the program
             between the boundaries given in the first two floatstack
             registers. This uses the Simpson method with 10 stripes.
-    [Finv]  Calculate 1/X
+* **[Finv]** Calculate 1/X  
             This function calculates the reciprocal value of the first
             floatstack register.
-    [Fln]   Calculate LN( X)
+* **[Fln]** Calculate LN(X)  
             This function calculates the natural logarithm of the first
             floatstack register.
-    [FLR]   Calculate L.R. (Xprev, Yprev)
+* **[FLR]** Calculate L.R. (Xprev, Yprev)  
             Calculates the predictive values of the line of best fit to nodes
             entered with [Fsum].
-    [Fpow]  Calculate POW(Y,X) ... Y^X
+* **[Fpow]** Calculate POW(Y,X) ... Y^X  
             This function pulls the first two floatstack registers and
             calculates the second raised to the power of the first and
             pushes the result to the floatstack.
-    [Fpush] Push floatstack
+* **[Fpush]** Push floatstack  
             This function lifts the whole floatstack one step but holds
             (reproduces) the first floatstack register.
-    [Frcl]  Recall float memory to X
+* **[Frcl]** Recall float memory to X  
             This function pushes the number stored with [Fsto] to the
             floatstack.
-    [Frot]  Rotate floatstack (down)
+* **[Frot]** Rotate floatstack (down)  
             This function rotates the whole floatstack down - which means
             the first floatstack register was shifted to the last.
-    [Fsave] Save floatstack and mem to EEPROM
+* **[Fsave]** Save floatstack and mem to EEPROM  
             Saves the whole floatstack and stored number [Fsto] permanently
             to the EEPROM. This values will be loaded automatically
             when switching on.
-    [Fshow] Show floatstack on display
+* **[Fshow]** Show floatstack on display  
             Shows the first floatstack register in the first line of the
             display. This will be done in scientific format only.
-    [Fsin]  Calculate SIN(X)
+* **[Fsin]** Calculate SIN(X)  
             This function calculates the sine function of the first
             floatstack register.
-    [Fsinh] Calculate SINH(X) +)
+* **[Fsinh]** Calculate SINH(X) +)  
             This function calculates the hyperbolic sine function of the
             first floatstack register.
-    [Fsolv] SOLVE function represented in prg[]
+* **[Fsolv]** SOLVE function represented in prg[]  
             Calculates the root of the function represented in the program due
             to Newton's method. The start value is given by the first floatstack
             register.
-    [Fsqrt] Calculate SQRT(X)
+* **[Fsqrt]** Calculate SQRT(X)  
             This function calculates square root of the first floatstack
             register.
-    [Fstat] Calculate statistics STAT ... X: mean Y: standard deviation
+* **[Fstat]** Calculate statistics STAT ... X: mean Y: standard deviation  
             Calculates the mean value and standard deviation of statistical
             data entered with [Fsum].
-    [Fsto]  Store X to float memory
+* **[Fsto]** Store X to float memory  
             This function stores the first floatstack register to the memory.
             To restore/recall it use [Frcl].
-    [Fsum]  Process statistical data (SUM)
+* **[Fsum]** Process statistical data (SUM)  
             Enter one- or two-dimensional statistical data. Evaluate this
             data with [FLR] or [Fstat].
-    [Fswap] Swap X and Y
+* **[Fswap]** Swap X and Y  
             This function swaps the first two floatstack register.
-    [Ftan]  Calculate TAN(X) +)
+* **[Ftan]** Calculate TAN(X) +)  
             This function calculates the tangent function of the first
             floatstack register.
-    [Ftanh] Calculate TANH(X) +)
+* **[Ftanh]** Calculate TANH(X) +)  
             This function calculates the hyperbolic tangent function of the
             first floatstack register.
-    [Ibyte] Input byte
+* **[Ibyte]** Input byte  
             This user interface allows entering byte values (0...255) to
             the bytestack.
-    [Ichar] Input character
+* **[Ichar]** Input character  
             This user interface allows entering ascii characters (byte
             values between 32 and 127) to the bytestack.
-    [Inum]  Input number
+* **[Inum]** Input number  
             This user interface allows entering ascii character numbers
             (byte values between 48 and 57) to the bytestack.
-    [KBD]   Keyboard emulator (HID keyboard via USB)
+* **[KBD]** Keyboard emulator (HID keyboard via USB)  
             This user interface allows to send keyboard like commands to
             the USB interface. To send CTRL or ALT keys press shift+L or
             shift+R. To send special commands use this codes:
@@ -267,52 +267,52 @@ Converts time or angle data given in h.mmss format to h.hh format.
               202-F9      203-F10     204-F11     205-F12     209-INSERT
               210-HOME    211-PGUP    212-DELETE  213-END     214-PGDOWN
               215-RIGHT   216-LEFT    217-DOWN    218-UP
-    [OFF]   Power down till A is pressed (SLEEP_MODE_PWR_DOWN), shift+B
+* **[OFF]** Power down till A is pressed (SLEEP_MODE_PWR_DOWN), shift+B 
             Sends the device into a deep sleep mode till button A is
             pressed. Note that neither a timer nor an interface is active.
-    [Pedit] Edit active program
+* **[Pedit]** Edit active program  
             User interface to edit a program. Insert a step with shift+R,
             delete a step with shift+L and edit a step with A.
-    [Pexp]  Export active program to Linux-PC
+* **[Pexp]** Export active program to Linux-PC  
             Exports program to a Linux-PC with minicom installed. It opens
             a shell, transfers steps (corresponding ascii characters) with
             minicom to the home directory of the PC (file named prg.aos).
             This file can be edited with any text editor and imported
             with [Pimp].
-    [Pgoto] Goto program step
+* **[Pgoto]** Goto program step  
             Reads the next program step and sets the program pointer to
             this value.
-    [Pimp]  Import active program from Linux-PC
+* **[Pimp]** Import active program from Linux-PC  
             Imports program from a Linux-PC. The file should be located
             in the home directory and should be named prg.aos. To export
             a program to a PC see [Pexp].
-    [Pname] Set program name (ZYX)
+* **[Pname]** Set program name (ZYX)  
             Sets the name of the program (3 letters) due to the first three
             bytestack registers (inverted order).
-    [Pnop]  No operation
+* **[Pnop]** No operation  
             This command does nothing, but is useful for skipping commands
             like [Py/n].
-    [PpB]   Push value of next program step to bytestack
+* **[PpB]** Push value of next program step to bytestack  
             This is the one and only command for a direct input of numbers
             in a program. It pushes the byte value of the following program
             step to the bytestack.
-    [Ppse]  Pause for PAUSE milliseconds
+* **[Ppse]** Pause for PAUSE milliseconds  
             Pauses the execution of the program for 1 second. This is useful
             to show messages or results while program execution.
-    [Prun]  Run active program
+* **[Prun]** Run active program  
             This command starts the execution of the program.
-    [Pstop] Stops program execution
+* **[Pstop]** Stops program execution  
             This command stops the execution of the program (note the
             hotkey LEFT+B).
-    [Psub]  Execute non-active program and return
+* **[Psub]** Execute non-active program and return  
             Switches to the non-active program, executes it and switches back
             to the source program execution. This is a simple way to use
             program codes as subprogram. To toggle between the active and
             non-active program see also [Pswap].
-    [Pswap] Toggle between active and non-active program
+* **[Pswap]** Toggle between active and non-active program  
             Toggle between active program and non-active program. See also
             [Psub].
-    [Py/n]  Decision ESC (ptr+1), NO (ptr+3) or YES (ptr+5)
+* **[Py/n]** Decision ESC (ptr+1), NO (ptr+3) or YES (ptr+5)  
             This command offers the possibility to check for a decision
             while program execution. While in line 1 of the display a text
             could be displayed (command [Bprnt]) in line 2 a YES or NO
@@ -320,33 +320,33 @@ Converts time or angle data given in h.mmss format to h.hh format.
             program pointer will be incremented by 3 and in case of a YES
             decision (RIGHT key) the program pointer will be incremented
             by 5. Any other key will execute the next program step.
-    [Sfn]   Set function keys and save to EEPROM (rdlu=TZYX)
+* **[Sfn]** Set function keys and save to EEPROM (rdlu=TZYX)  
             While in command mode 4 function keys can be defined by the
             user. This command pulls 4 bytes (commands) from the bytestack
             and assigns them to the 4 function keys (RIGHT, DOWN, LEFT, UP).
             Additionally these assignments are saved permanantly to the
             EEPROM. To recall these commands press in command mode shift and
             the corrsponding cursor key.
-    [Slit]  Set contrast
+* **[Slit]** Set contrast  
             Sets the contrast of the display due to the first bytestack
             register and saves it permanently to the EEPROM.
-    [Sss]   Set screensaver time
+* **[Sss]** Set screensaver time  
             Sets the screensaver time due to the first bytestack register
             (in seconds) and saves it permanently to the EEPROM.
-    [TERM]  Toggle terminal control
+* **[TERM]** Toggle terminal control  
             Enables to control AOS via USB from a PC running a terminal
             program (ie minicom). So the keys Q/W/E/A/S/D are corresponding
             to the buttons A/UP/B/LEFT/DOWN/RIGHT.
-    [TORCH] Toggle torch
+* **[TORCH]** Toggle torch  
             This command toggles the white LED light of the Arduboy.
-    [TXT]   Text editor (treat prg[] as text file)
+* **[TXT]** Text editor (treat prg[] as text file)  
             User interface to edit a program a text file. To insert a
             character press shift+RIGHT or B. To delete a character
             (backspace) press shift+LEFT. Note that a text file can be moved
             (load, save, import, export) like a program.
-    [WATCH] Show watch (set with cursor keys, reset minute with B)
+* **[WATCH]** Show watch (set with cursor keys, reset minute with B)  
             Note that screensaver and auto poweroff will be deactivated.
-    [Wset]  Set watch from bytestack (YY:XX)
+* **[Wset]** Set watch from bytestack (YY:XX)  
             Activates and sets the watch due to the first two bytestack
             registers (minutes and hours).
 
