@@ -80,50 +80,44 @@ Prints the name of this software, the version and the author.
 Pulls first bytestack register and pushes it (with casting to double) to the first floatstack register.
 * **[B>>F]** Flush bytestack to calculator  
 Flushes the inverted bytestack (not equal NULL) to become interpreted by the the calculator (ie digits, decimal point). Useful in programs to enter float numbers to the floatstack.
-* **[Bclr]**  Clear bytestack
-            Writes NULL values to the whole bytestack.
-    [Bprnt] Print bytestack as string
-            Flushes the inverted bytestack (not equal NULL) and print this
-            characters to the first line of the display. Useful in programs to
-            print text to the display.
-    [Bshow] Show bytestack on display
-            Shows the first three bytestack register in the second line of the
-            display.
-    [CALC]  Calculator mode (RPN)
-            User interface that allows to enter numbers to the floatstack
-            (digits, decimal point, paragraph symbol to enter the number).
-            Additional is a clear function (C) and the possibility to enter one
-            command (arrow up).
-    [Cload] Load constant with number floatstack[0] to floatstack
+* **[Bclr]** Clear bytestack  
+Writes NULL values to the whole bytestack.
+* **[Bprnt]** Print bytestack as string  
+Flushes the inverted bytestack (not equal NULL) and print this characters to the first line of the display. Useful in programs to print text to the display.
+* **[Bshow]** Show bytestack on display  
+Shows the first three bytestack register in the second line of the display.
+* **[CALC]** Calculator mode (RPN)  
+User interface that allows to enter numbers to the floatstack (digits, decimal point, paragraph symbol to enter the number). Additional is a clear function (C) and the possibility to enter one command (arrow up).
+* **[Cload]** Load constant with number floatstack[0] to floatstack
             Loads a float constant from EEPROM and pushes it to the floatstack.
             The number of the desired constant (0...9) will be pulled from the
             floatstack (see also [Csave]).
-    [Csave] Save floatstack[1] to EEPROM at slot floatstack[0]
+* **[Csave] Save floatstack[1] to EEPROM at slot floatstack[0]
             Copies the number of the second floatstack register to the EEPROM
             at slot floatstack[0].
-    [D]     Disk operation system (save, load, delete)
+* **[D]     Disk operation system (save, load, delete)
             User interface that allows to treat files (programs) saved to
             EEPROM. Browse the disk content (cursor keys), load a program to
             memory (with key B), save a program to disk (with shift right) or
             delete a saved file from EEPROM (with (shift left). Exit this
             interface with shift up or shift down.
-    [Dfmt]  Format disk system
+* **[Dfmt]  Format disk system
             Format the disk (EEPROM) - this deletes all saved files!
-    [F!]    Calculate GAMMA/factorial +)
+* **[F!]    Calculate GAMMA/factorial +)
             This function calculates the gamma function due to Nemes.
-    [F*]    Calculate Y*X
+* **[F*]    Calculate Y*X
             This function pulls and multiplies the first two floatstack
             registers and pushes the result to the floatstack.
-    [F+]    Calculate Y+X
+* **[F+]    Calculate Y+X
             This function pulls and adds the first two floatstack registers
             and pushes the result to the floatstack.
-    [F-]    Calculate Y-X
+* **[F-]    Calculate Y-X
             This function pulls and substracts the first two floatstack
             registers and pushes the result to the floatstack.
-    [F/]    Calculate Y/X
+* **[F/]    Calculate Y/X
             This function pulls and divides the first two floatstack
             registers and pushes the result to the floatstack.
-    [F2h]   Convert H.MS to H
+* **[F2h]   Convert H.MS to H
             Converts time or angle data given in h.mmss format to h.hh format.
     [F2hms] Convert H to H.MS
             Converts time or angle data given in h.hh format to h.mmss format.
