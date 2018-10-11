@@ -111,162 +111,110 @@ Converts time or angle data given in h.mmss format to h.hh format.
 * **[F2hms]** Convert H to H.MS  
 Converts time or angle data given in h.hh format to h.mmss format.
 * **[F2p]** Convert rectangular to polar coordinates +)  
-            Converts rectangular coordinates (x|y) represented in the first
-            two registers of the floatstack (X|Y) to polar coordinates (r|<)
-            represented in the first two registers of the floatstack (X|Y).
+Converts rectangular coordinates (x|y) represented in the first two registers of the floatstack (X|Y) to polar coordinates (r|<) represented in the first two registers of the floatstack (X|Y).
 * **[F2r]** Convert polar to rectangular coordinates +)  
-            Converts polar coordinates (r|<) represented in the first two
-            registers of the floatstack (X|Y) to rectangular coordinates (x|y)
-            represented in the first two registers of the floatstack (X|Y).
+Converts polar coordinates (r|<) represented in the first two registers of the floatstack (X|Y) to rectangular coordinates (x|y) represented in the first two registers of the floatstack (X|Y).
 * **[F<]** True (ptr+2) if X < Y on floatstack  
-            Increments the program pointer with 2 if the first floatstack
-            register is less than the second.
+Increments the program pointer with 2 if the first floatstack register is less than the second.
 * **[F<=]** True (ptr+2) if X <= Y on floatstack  
-            Increments the program pointer with 2 if the first floatstack
-            register is less or equal than the second.
+Increments the program pointer with 2 if the first floatstack register is less or equal than the second.
 * **[F<>]** True (ptr+2) if X <> Y on floatstack  
-            Increments the program pointer with 2 if the first floatstack
-            register is not equal than the second.
+Increments the program pointer with 2 if the first floatstack register is not equal than the second.
 * **[F=]** True (ptr+2) if X = Y on floatstack  
-            Increments the program pointer with 2 if the first floatstack
-            register is equal to the second.
+Increments the program pointer with 2 if the first floatstack register is equal to the second.
 * **[F>]** True (ptr+2) if X > Y on floatstack  
-            Increments the program pointer with 2 if the first floatstack
-            register is greater than the second.
+Increments the program pointer with 2 if the first floatstack register is greater than the second.
 * **[F>=]** True (ptr+2) if X >= Y on floatstack  
-            Increments the program pointer with 2 if the first floatstack
-            register is greater or equal than the second.
+Increments the program pointer with 2 if the first floatstack register is greater or equal than the second.
 * **[Facos]** Calculate ACOS(X) +)  
-            This function calculates the inverse cosine function of the
-            first floatstack register.
+This function calculates the inverse cosine function of the first floatstack register.
 * **[Facsh]** Calculate ACOSH(X) +)  
-            This function calculates the inverse hyperbolic cosine function
-            of the first floatstack register.
+This function calculates the inverse hyperbolic cosine function of the first floatstack register.
 * **[Fannu]** Calculate annuity/preset value (Y: rate, X:years) +)  
-            Calculates the annuity respective preset value of a given interest
-            rate (second floatstack register) and duration (first floatstack
-            register).
+Calculates the annuity respective preset value of a given interest rate (second floatstack register) and duration (first floatstack register).
 * **[Fasin]** Calculate ASIN(X)  
-            This function calculates the inverse sine function of the first
-            floatstack register.
+This function calculates the inverse sine function of the first floatstack register.
 * **[Fasnh]** Calculate ASINH(X) +)  
-            This function calculates the inverse hyperbolic sine function
-            of the first floatstack register.
+This function calculates the inverse hyperbolic sine function of the first floatstack register.
 * **[Fatan]** Calculate ATAN(X)  
-            This function calculates the inverse tangent function of the first
-            floatstack register.
+This function calculates the inverse tangent function of the first floatstack register.
 * **[Fatnh]** Calculate ATANH(X) +)  
-            This function calculates the inverse hyperbolic tangent function
-            of the first floatstack register.
+This function calculates the inverse hyperbolic tangent function of the first floatstack register.
 * **[Fbatt]** Push the value of battery voltage to floatstack  
-            Measures the supply voltage and pushes the value to the floatstack.
-            Values between 2.4V (0%) and 4.3V (100%) correspond to the
-            battery level.
+Measures the supply voltage and pushes the value to the floatstack. Values between 2.4V (0%) and 4.3V (100%) correspond to the
+battery level.
 * **[Fce]** Clear last entry  
-            Deletes last entry or keypress of entered float number.
+Deletes last entry or keypress of entered float number.
 * **[Fchs]** Change sign of X  
-            Changes the sign of the first floatstack register.
+Changes the sign of the first floatstack register.
 * **[Fclx]** Clear X  
-            Clears the first floatstack register (assign 0.0).
+Clears the first floatstack register (assign 0.0).
 * **[Fcos]** Calculate COS(X) +)  
-            This function calculates the cosine function of the first
-            floatstack register.
+This function calculates the cosine function of the first floatstack register.
 * **[Fcosh]** Calculate COSH(X) +)  
-            This function calculates the hyperbolic cosine function of the
-            first floatstack register.
+This function calculates the hyperbolic cosine function of the first floatstack register.
 * **[FEE]** Calculate EE (Y\*10^X) on floatstack  
-            This function pulls the first two floatstack registers and
-            multiplies the second with 10  raised to the power of the first.
-            Use this function to enter exponents with base 10.
+This function pulls the first two floatstack registers and multiplies the second with 10  raised to the power of the first. Use this function to enter exponents with base 10.
 * **[Fexp]** Calculate EXP(X)  
-            This function calculates the exponential function of the first
-            floatstack register.
+This function calculates the exponential function of the first floatstack register.
 * **[Fgaus]** Calculate CDF/PDF (standardized gaussian distribution function) +)  
-            This function calculates the  CDF (Cumulative Distribution Function)
-            and PDF (Probability Density Function) of the first floatstack
-            register and pushes the results to the floatstack.
+This function calculates the  CDF (Cumulative Distribution Function) and PDF (Probability Density Function) of the first floatstack register and pushes the results to the floatstack.
 * **[Fint]** INTegrate function represented in prg[] between Y and X  
-            Calculates the integral of the function represented in the program
-            between the boundaries given in the first two floatstack
-            registers. This uses the Simpson method with 10 stripes.
+Calculates the integral of the function represented in the program between the boundaries given in the first two floatstack registers. This uses the Simpson method with 10 stripes.
 * **[Finv]** Calculate 1/X  
-            This function calculates the reciprocal value of the first
-            floatstack register.
+ This function calculates the reciprocal value of the first floatstack register.
 * **[Fln]** Calculate LN(X)  
-            This function calculates the natural logarithm of the first
-            floatstack register.
+This function calculates the natural logarithm of the first floatstack register.
 * **[FLR]** Calculate L.R. (Xprev, Yprev)  
-            Calculates the predictive values of the line of best fit to nodes
-            entered with [Fsum].
+Calculates the predictive values of the line of best fit to nodes entered with [Fsum].
 * **[Fpow]** Calculate POW(Y,X) ... Y^X  
-            This function pulls the first two floatstack registers and
-            calculates the second raised to the power of the first and
-            pushes the result to the floatstack.
+This function pulls the first two floatstack registers and calculates the second raised to the power of the first and pushes the result to the floatstack.
 * **[Fpush]** Push floatstack  
-            This function lifts the whole floatstack one step but holds
-            (reproduces) the first floatstack register.
+This function lifts the whole floatstack one step but holds (reproduces) the first floatstack register.
 * **[Frcl]** Recall float memory to X  
-            This function pushes the number stored with [Fsto] to the
-            floatstack.
+This function pushes the number stored with [Fsto] to the floatstack.
 * **[Frot]** Rotate floatstack (down)  
-            This function rotates the whole floatstack down - which means
-            the first floatstack register was shifted to the last.
+ This function rotates the whole floatstack down - which means the first floatstack register was shifted to the last.
 * **[Fsave]** Save floatstack and mem to EEPROM  
-            Saves the whole floatstack and stored number [Fsto] permanently
-            to the EEPROM. This values will be loaded automatically
-            when switching on.
+Saves the whole floatstack and stored number [Fsto] permanently to the EEPROM. This values will be loaded automatically when switching on.
 * **[Fshow]** Show floatstack on display  
-            Shows the first floatstack register in the first line of the
-            display. This will be done in scientific format only.
+Shows the first floatstack register in the first line of the display. This will be done in scientific format only.
 * **[Fsin]** Calculate SIN(X)  
-            This function calculates the sine function of the first
-            floatstack register.
+This function calculates the sine function of the first floatstack register.
 * **[Fsinh]** Calculate SINH(X) +)  
-            This function calculates the hyperbolic sine function of the
-            first floatstack register.
+This function calculates the hyperbolic sine function of the first floatstack register.
 * **[Fsolv]** SOLVE function represented in prg[]  
-            Calculates the root of the function represented in the program due
-            to Newton's method. The start value is given by the first floatstack
-            register.
+Calculates the root of the function represented in the program due to Newton's method. The start value is given by the first floatstack register.
 * **[Fsqrt]** Calculate SQRT(X)  
-            This function calculates square root of the first floatstack
-            register.
+This function calculates square root of the first floatstack register.
 * **[Fstat]** Calculate statistics STAT ... X: mean Y: standard deviation  
-            Calculates the mean value and standard deviation of statistical
-            data entered with [Fsum].
+Calculates the mean value and standard deviation of statistical data entered with [Fsum].
 * **[Fsto]** Store X to float memory  
-            This function stores the first floatstack register to the memory.
-            To restore/recall it use [Frcl].
+This function stores the first floatstack register to the memory. To restore/recall it use [Frcl].
 * **[Fsum]** Process statistical data (SUM)  
-            Enter one- or two-dimensional statistical data. Evaluate this
-            data with [FLR] or [Fstat].
+Enter one- or two-dimensional statistical data. Evaluate this data with [FLR] or [Fstat].
 * **[Fswap]** Swap X and Y  
-            This function swaps the first two floatstack register.
+This function swaps the first two floatstack register.
 * **[Ftan]** Calculate TAN(X) +)  
-            This function calculates the tangent function of the first
-            floatstack register.
+This function calculates the tangent function of the first floatstack register.
 * **[Ftanh]** Calculate TANH(X) +)  
-            This function calculates the hyperbolic tangent function of the
-            first floatstack register.
+This function calculates the hyperbolic tangent function of the first floatstack register.
 * **[Ibyte]** Input byte  
-            This user interface allows entering byte values (0...255) to
-            the bytestack.
+This user interface allows entering byte values (0...255) to the bytestack.
 * **[Ichar]** Input character  
-            This user interface allows entering ascii characters (byte
-            values between 32 and 127) to the bytestack.
+This user interface allows entering ascii characters (byte values between 32 and 127) to the bytestack.
 * **[Inum]** Input number  
-            This user interface allows entering ascii character numbers
-            (byte values between 48 and 57) to the bytestack.
+This user interface allows entering ascii character numbers (byte values between 48 and 57) to the bytestack.
 * **[KBD]** Keyboard emulator (HID keyboard via USB)  
-            This user interface allows to send keyboard like commands to
-            the USB interface. To send CTRL or ALT keys press shift+L or
-            shift+R. To send special commands use this codes:
+This user interface allows to send keyboard like commands to the USB interface. To send CTRL or ALT keys press shift+L or shift+R. To send special commands use this codes:
+``````
               128-CTRL    130-ALT     176-RETURN  177-ESC    178-BKSPC
               179-TAB     193-CAPS    194-F1      195-F2      196-F3
               197-F4      198-F5      199-F6      200-F7      201-F8
               202-F9      203-F10     204-F11     205-F12     209-INSERT
               210-HOME    211-PGUP    212-DELETE  213-END     214-PGDOWN
               215-RIGHT   216-LEFT    217-DOWN    218-UP
+``````
 * **[OFF]** Power down till A is pressed (SLEEP_MODE_PWR_DOWN), shift+B 
             Sends the device into a deep sleep mode till button A is
             pressed. Note that neither a timer nor an interface is active.
