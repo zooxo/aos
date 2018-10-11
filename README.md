@@ -41,6 +41,7 @@ Note that there are some commands that are only useful in executable programs (l
 ## COMMANDS
 
 ### **COMMANDS - Sections** (capital letters in commands):
+``````
     B     bytestack operations
     F     floatstack operations
     C     operations with constants
@@ -55,6 +56,7 @@ Note that there are some commands that are only useful in executable programs (l
     TORCH toggle torch on/off
     TXT   simple text editor
     WATCH simple digital clock
+``````
 
 ### **COMMANDS - Overview** (commands and corresponding ascii characters):
   ```
@@ -141,8 +143,7 @@ This function calculates the inverse tangent function of the first floatstack re
 * **[Fatnh]** Calculate ATANH(X) +)  
 This function calculates the inverse hyperbolic tangent function of the first floatstack register.
 * **[Fbatt]** Push the value of battery voltage to floatstack  
-Measures the supply voltage and pushes the value to the floatstack. Values between 2.4V (0%) and 4.3V (100%) correspond to the
-battery level.
+This function measures the supply voltage and pushes the value to the floatstack. It seems that a standard Arduboy is full charged if the voltage exceeds 4.3 V if plugged and 4.2 V if unplugged. The battery seems to be empty with a voltage below 3.1 V. These values may differ with different hardware or battery condition. See also the section "Energy Saving".
 * **[Fce]** Clear last entry  
 Deletes last entry or keypress of entered float number.
 * **[Fchs]** Change sign of X  
@@ -263,52 +264,60 @@ Activates and sets the watch due to the first two bytestack registers (minutes a
 +) ...  Some functions affect the whole floatstack as they are calculated with basic operations.
 
 
-## **BATTERY**
-  Battery level: PLUGGED/FULL 4.33 V, UNPLUGGED/MAX 4.22 V, MIN 3.11 V
-     discharge: (0h|4.15V) (22h|3.6V)
+## SPECIALITIES
 
- ## Variables, Memory:
-          :         T
-      2   Z         Z                   P1 = 0, 1, 2, ... 255  <----/  Swap
-      1   Y         Y                                              /   with
-      0   X         X        MEM      P0 = 0, 1, 2, ... 255  <----/    Pswap
-
-          Byte-     Float-   Float-   Program-
-          stack     stack    memory   memory
-          16 bytes  4 float  1 float  2 x 256 bytes
-                    <-------------->  <------------------->
-                    Save to EEPROM    Save/load to/from EEPROM with D (Disk Tool).
-                    with Fsave        Export/import to/from PC with Pexp/Pimp.
-                                      Edit with Pedit (program) or TXT (text file).
+## Hotkeys, Shortcuts
+      A-B reset
+      - UP while switching on ... Secure wait to flash software
+      - A + B                 ... Reset device
+      - LEFT + B              ... Stop program execution
+      - shift B (in cmd mode) ... Deep sleep mode <OFF> till A is pressed
+      - shift RIGHT/DOWN/LEFT/UP (in cmd mode) ... execute function key set with Sfn
 
 
-  EEPROM:
+## Energy Saving:
+      - Some not used features (I2C, ADC, USART, all timers but number 0)
+        are permanently disabled.
+      - The display deactivates after the screensaver time (set with <Sss>).
+      - After 3 minutes auto power off activates the deep sleep mode.
+      Note: In deep sleep mode USB and all timers (clock) are disabled.
+      Note: While the clock is active <WATCH> neither auto poweroff nor the
+            screensaver is active.
 
+
+### YES/NO/ESC-decision (Py/n)
+       Py/n --->---+
+       - <---ESC---+   ESC (any key except YES or NO) runs the next program step
+       -           |
+       - <---NO----+   NO (left key) skips next two program steps
+       -           |
+       - <---YES---+   YES (right key) skips next four program steps
+
+
+
+## First start
+      Sss, Slit, Fsave
+
+
+## APPENDIX
+
+
+
+
+### EEPROM:
+``````
     | Bright- | Screenoff | Fkeys | Floatstack  |   Disk    |
     | ness    | time      |       | X Y Z T MEM |  (files)  |
     0         1           2       6             26         2559
     |    1    |     1     |   4   |      20     |   2533    |
+``````
 
 
 
 
-  CALC:
-    : ENTER
-    / Choose one command
-    - CLx/CE
 
-  Disk
 
-  Screen - select a byte/character/command
-
-                          |       _        |
-    selected byte (dec)   |  069 |_  Fexp  |  selected command
-    previous characters   |  BCD |_ FGHIJ  |  next characters
-                          |________________|
-                                 ^
-                                 selected character (double size)
-
-  Keyboard:
+### Keyboard:
     ^
    < >  B
     v  A
@@ -360,37 +369,7 @@ Activates and sets the watch due to the first two bytestack registers (minutes a
 
 
 
-    YES/NO/ESC-decision (Py/n)
-       Py/n --->---+
-       - <---ESC---+   ESC (any key except YES or NO) runs the next program step
-       -           |
-       - <---NO----+   NO (left key) skips next two program steps
-       -           |
-       - <---YES---+   YES (right key) skips next four program steps
-
-
-
-    Hotkeys, Shortcuts
-      - UP while switching on ... Secure wait to flash software
-      - A + B                 ... Reset device
-      - LEFT + B              ... Stop program execution
-      - shift B (in cmd mode) ... Deep sleep mode <OFF> till A is pressed
-      - shift RIGHT/DOWN/LEFT/UP (in cmd mode) ... execute function key set with Sfn
-
-    Energy Saving:
-      - Some not used features (I2C, ADC, USART, all timers but number 0)
-        are permanently disabled.
-      - The display deactivates after the screensaver time (set with <Sss>).
-      - After 3 minutes auto power off activates the deep sleep mode.
-      Note: In deep sleep mode USB and all timers (clock) are disabled.
-      Note: While the clock is active <WATCH> neither auto poweroff nor the
-            screensaver is active.
-
-    First start
-      Sss, Slit, Fsave
-
-
-    ASCII TABLE:
+## ASCII TABLE
 
       DEC     |  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5
           HEX |  0 1 2 3 4 5 6 7 8 9 a b c d e f
@@ -403,7 +382,7 @@ Activates and sets the watch due to the first two bytestack registers (minutes a
       112 70  |  p q r s t u v w x y z { | } ~
 
 
-
+## MODYFIER KEYS
   Leonardo's definitions for modifier keys (Key Hex Dec):
   KEY_LEFT_CTRL  0x80  128
   KEY_LEFT_SHIFT  0x81  129
@@ -440,6 +419,3 @@ Activates and sets the watch due to the first two bytestack registers (minutes a
   KEY_F10  0xCB  203
   KEY_F11  0xCC  204
   KEY_F12  0xCD  205
-
-
-
