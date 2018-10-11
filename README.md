@@ -265,9 +265,10 @@ Activates and sets the watch due to the first two bytestack registers (minutes a
 
 
 ## SPECIALITIES
+## First start
+Some variables are stored permanently to the EEPROM and will be loaded automatically when started. After flashing AOS the EEPROM may content undefined values. So setting some variables after flashing make sense. Particulary this makes sense for the screensaver time ([Sss]), screen contrast ([Slit]) and floatstack values ([Fsave]).
 
 ## Hotkeys, Shortcuts
-      A-B reset
       - UP while switching on ... Secure wait to flash software
       - A + B                 ... Reset device
       - LEFT + B              ... Stop program execution
@@ -293,10 +294,6 @@ Activates and sets the watch due to the first two bytestack registers (minutes a
        -           |
        - <---YES---+   YES (right key) skips next four program steps
 
-
-
-## First start
-      Sss, Slit, Fsave
 
 
 ## APPENDIX
