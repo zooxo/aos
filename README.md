@@ -40,7 +40,7 @@ Note that there are some commands that are only useful in executable programs (l
 
 ## COMMANDS
 
-  COMMANDS - Sections (capital letters in commands):
+### **COMMANDS - Sections** (capital letters in commands):
     B     bytestack operations
     F     floatstack operations
     C     operations with constants
@@ -56,7 +56,7 @@ Note that there are some commands that are only useful in executable programs (l
     TXT   simple text editor
     WATCH simple digital clock
 
-  COMMANDS - Overview (commands and corresponding ascii characters):
+### **COMMANDS - Overview** (commands and corresponding ascii characters):
   ```
       DEC  |  0       1       2       3       4       5       6       7
       -----|--+-------+-------+-------+-------+-------+-------+-------+------
@@ -73,10 +73,10 @@ Note that there are some commands that are only useful in executable programs (l
       112  |  p Sfn   q Slit  r Sss   s TERM  t TORCH u TXT   v WATCH w Wset
 ```
 
-  COMMANDS - Detailed description:
-    [about] Print about message
+### **COMMANDS** - Detailed description:
+* **[about]** Print about message
             Prints the name of this software, the version and the author.
-    [B2F]   Pull bytestack[0] and push/cast to floatstack[0]
+* **[B2F]**   Pull bytestack[0] and push/cast to floatstack[0]
             Pulls first bytestack register and pushes it (with casting to double)
             to the first floatstack register.
     [B>>F]  Flush bytestack to calculator
