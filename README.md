@@ -3,6 +3,8 @@ Welcome to AOS (Arduboy Operating System)
 Version 1.0 ... (c) 2018 by deetee/zooxo  
 This software is covered by the 3-clause BSD license.  
 
+![aos](https://user-images.githubusercontent.com/16148023/47264898-8e208b00-d51f-11e8-824f-33a3891b56c8.jpg)  
+
 See a short video of AOS:
 * Version 1.0: https://youtu.be/dVvj3j-pYlQ
 
