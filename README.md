@@ -279,16 +279,18 @@ Some variables are stored permanently to the EEPROM and will be loaded automatic
       - shift B (in cmd mode) ... Deep sleep mode <OFF> till A is pressed
       - shift RIGHT/DOWN/LEFT/UP (in cmd mode) ... execute function key set with Sfn
 
-
-## Energy Saving:
-      - Some not used features (I2C, ADC, USART, all timers but number 0)
-        are permanently disabled.
-      - The display deactivates after the screensaver time (set with <Sss>).
-      - After 3 minutes auto power off activates the deep sleep mode.
+## Energy Saving
+      - Some not used features (I2C, ADC, USART, all timers but number 0) are permanently disabled.
+      - The display deactivates after inactivity and the screensaver time (set with <Sss>).
+      - After 3 minutes of inactivity auto poweroff activates the deep sleep mode.
       Note: In deep sleep mode USB and all timers (clock) are disabled.
-      Note: While the clock is active <WATCH> neither auto poweroff nor the
-            screensaver is active.
+      Note: While the clock is active ([WATCH]) neither auto poweroff nor the screensaver will be activated.
 
+## DECISION - based on floatstack (X, Y)
+       F(<, <=, <>, =, >, >=) --+   Skips next two program steps if TRUE
+       -                        |
+       -                        |
+       - <----------------------+
 
 ### YES/NO/ESC-decision [Py/n]
        Py/n --->---+
@@ -299,11 +301,7 @@ Some variables are stored permanently to the EEPROM and will be loaded automatic
        - <---YES---+   YES (right key) skips next four program steps
 
 
-
 ## APPENDIX
-
-
-
 
 ### EEPROM:
 ``````
@@ -313,64 +311,7 @@ Some variables are stored permanently to the EEPROM and will be loaded automatic
     |    1    |     1     |   4   |      20     |   2533    |
 ``````
 
-
-
-
-
-
-### Keyboard:
-    ^
-   < >  B
-    v  A
-
-
-            up/esc
-      left/del right/ins        OK
-          down/          ESC/shift
-
-    Shortcuts:
-      A-B reset
-
-    Input, calculator:
-           pageUp          select
-      left pageDown right  esc
-
-    Program edit:
-                      up/esc                    editStep
-      pgup/deleteStep down/esc pgdn/insertStep  shift
-
-    Text edit:
-                      up/esc                    insertChar
-      pgup/deleteChar down/esc pgdn/insertChar  shift
-
-    Disk:
-      Dfmt
-               up/esc                  loadFile
-      pgup/del down/esc pgdn/saveFile  shift
-
-    Watch:
-                  incr_hour              reset_seconds
-      decr_minute decr_hour incr_minute  esc
-
-
-    Terminal Mode:
-         w     m
-       a s d   n
-
-    KBD:
-                up/esc             send
-      pgup/CTRL down/esc pgdn/ALT  shift
-
-
-    Decision based on floatstack (X, Y)
-       F(<, <=, <>, =, >, >=) --+   Skips next two program steps if TRUE
-       -                        |
-       -                        |
-       - <----------------------+
-
-
-
-## ASCII TABLE
+### ASCII TABLE
 
       DEC     |  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5
           HEX |  0 1 2 3 4 5 6 7 8 9 a b c d e f
@@ -382,8 +323,7 @@ Some variables are stored permanently to the EEPROM and will be loaded automatic
       096 60  |  ` a b c d e f g h i j k l m n o
       112 70  |  p q r s t u v w x y z { | } ~
 
-
-## MODYFIER KEYS
+### MODYFIER KEYS
   Leonardo's definitions for modifier keys (Key Hex Dec):
   KEY_LEFT_CTRL  0x80  128
   KEY_LEFT_SHIFT  0x81  129
