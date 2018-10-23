@@ -324,8 +324,8 @@ Some variables are stored permanently to the EEPROM and will be loaded automatic
       112 70  |  p q r s t u v w x y z { | } ~
 
 ### MODYFIER KEYS- Leonardo (Key Hex Dec)
-KEY_LEFT_CTRL  0x80  128
-KEY_LEFT_SHIFT  0x81  129
+KEY_LEFT_CTRL 0x80 128  
+KEY_LEFT_SHIFT  0x81  129  
 KEY_LEFT_ALT  0x82  130
 KEY_LEFT_GUI  0x83  131
 KEY_RIGHT_CTRL  0x84  132
